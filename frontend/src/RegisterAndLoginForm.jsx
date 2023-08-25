@@ -9,7 +9,7 @@ export default function RegisterAndLoginForm() {
   const {setUsername:setLoggedInUsername, setId} = useContext(UserContext);
   async function handleSubmit(ev) {
     ev.preventDefault();
-    const url = isLoginOrRegister === 'register' ? 'register' : 'login';
+    const url = isLoginOrRegister === 'https://real-time-chat-1d4x.onrender.com/register' ? 'https://real-time-chat-1d4x.onrender.com/register' : 'https://real-time-chat-1d4x.onrender.com/login';
     const {data} = await axios.post(url, {username,password});
     setLoggedInUsername(username);
     setId(data.id);
@@ -33,7 +33,7 @@ export default function RegisterAndLoginForm() {
           {isLoginOrRegister === 'register' && (
             <div>
               Already a member?
-              <button className="ml-1" onClick={() => setIsLoginOrRegister('login')}>
+              <button className="ml-1" onClick={() => setIsLoginOrRegister('https://real-time-chat-1d4x.onrender.com/login')}>
                 Login here
               </button>
             </div>
@@ -41,7 +41,7 @@ export default function RegisterAndLoginForm() {
           {isLoginOrRegister === 'login' && (
             <div>
               Dont have an account?
-              <button className="ml-1" onClick={() => setIsLoginOrRegister('register')}>
+              <button className="ml-1" onClick={() => setIsLoginOrRegister('https://real-time-chat-1d4x.onrender.com/register')}>
                 Register
               </button>
             </div>
